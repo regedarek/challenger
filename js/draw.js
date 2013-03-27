@@ -11,9 +11,21 @@
         name: "Betty"
       }
     ];
-    return $scope.addEntry = function() {
+    $scope.addEntry = function() {
       $scope.entries.push($scope.newEntry);
       return $scope.newEntry = {};
+    };
+    $scope.countPairs = function() {
+      var players;
+      players = $scope.entries.length;
+      if (players % 2 !== 0) {
+        return players / 2 - 0.5;
+      } else {
+        return players / 2;
+      }
+    };
+    return $scope.drawLucky = function() {
+      return $scope.lucky = $scope.entries[Math.floor(Math.random() * $scope.entries.length)];
     };
   };
 

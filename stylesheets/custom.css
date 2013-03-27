@@ -1,3 +1,41 @@
 input.drag-right {
 	display: inline-block;
 }
+
+a#header-logo, a#header-logo h3 {
+	color: #999;
+	font-style: italic;
+	font-variant: normal;
+	text-decoration: none;
+	position: relative; top: 2px;
+}
+
+ul#main-menu {
+	display: block;
+	margin: -10px auto 50px auto;
+	text-align: center;
+}
+
+ul#main-menu li {
+	display: inline-block;
+	font-family: "Georgia", "Times New Roman", serif;
+	font-variant: small-caps;
+	text-align: center;
+	margin: 0 20px; 
+}
+
+form.player-adding {
+	display: inline-block;
+}
+
+ul.players-list li {
+	background: #ddd;
+	padding: 5px;
+	margin: 2px;
+	display: inline;
+	border-radius: 5px;
+}
+
+ul.players-list li:after {
+	content: ' \00d7'
+}

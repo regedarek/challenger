@@ -37,23 +37,41 @@
 
 </head>
 <body>
-<div class="container">
+<div class="container" ng-controller="DrawCtrl">
 	<div class="sixteen columns">
-		<div ng-controller="DrawCtrl">
+		<hr />
+		<ul id="main-menu">
+			<li>Home</li>
+			<li>About</li>
+			<li><a href="#" id="header-logo"><h3>Challenger</h3></a></li>
+			<li>Contact</li>
+			<li>Awesome</li>
+		</ul>
+	</div>
+
+	<div class="twelve columns">
+		<div>
 			<h1>Enter names of players</h1>
-			<form ng-submit="addEntry()">
+			<form class="player-adding" ng-submit="addEntry()">
 				<input name="player-name" type="text" class="drag-right" ng-model="newEntry.name" />
 				<input type="submit" value="Add" />
 			</form>
+			<button ng-show="entries.length % 2 > 0" ng-click="drawLucky()">Draw Lucky Player</button>
 
-			<ul>
-				<li ng-repeat="entry in entries">
-					{{entry.name}}
-				</li>
-				<li>{{newEntry.name}}</li>
+			<ul class="players-list">
+				<li ng-repeat="entry in entries">{{entry.name}}</li>
+				{{newEntry.name}}
 			</ul>
 		</div>
 	</div>
+
+	<div class="four columns">
+		<ul>
+			<li>Number of pairs: {{countPairs()}} </li>
+			<span ng-show="lucky.name.length > 0">{{lucky.name}} gets a bye</span>
+		</ul>
+	</div>
+
 </div>
 
 <script type="text/javascript" src="vendor/angular.min.js"></script>
